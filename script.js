@@ -1,3 +1,5 @@
+// Ligh/Dark Mode
+
 let modeColor = document.querySelector("#mode-color");
 let checkCenter = document.querySelector(".check-center");
 let lightIcon = document.querySelector(".light-icon");
@@ -17,3 +19,14 @@ modeColor.addEventListener("change", (event) => {
         darkIcon.classList.remove("_in");
     }
 })
+
+// Consumo API fake user 
+fetch("https://randomuser.me/api/?results=1")
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        let user = data.results[0];
+        let name = `${user.name.title} ${user.name.first} ${user.name.last}`;
+        console.log(name);
+    })
